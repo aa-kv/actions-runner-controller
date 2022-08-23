@@ -40,6 +40,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Probably don't need this step
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '1.18.2'
+
       # Login against a Docker registry except on PR
       # https://github.com/docker/login-action
       - name: Log into registry ${{ env.REGISTRY }}
@@ -70,4 +75,4 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           file: Dockerfile
           platforms: linux/amd64
-          build-args: VERSION=canary
+          build-args: VERSION=latest
