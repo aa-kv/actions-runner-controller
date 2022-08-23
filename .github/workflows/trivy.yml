@@ -31,7 +31,7 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'summerwind/actions-runner:v2.295.0-ubuntu-20.04-3724b46'
+          image-ref: 'ghcr.io/aa-kv/actions-runner-controller:master'
           format: 'sarif'
           output: 'trivy-results.sarif'
           severity: 'CRITICAL,HIGH,MEDIUM,LOW,UNKNOWN'
